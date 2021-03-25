@@ -24,30 +24,18 @@ To get the example, run
   cd dfttk_example
 
 The example is designed to have the user to test the DFTTK package using Al.
-The three folders are
+The input settings for the Al example are contained in the ``Al/`` folder by two
+files
 
- - ``Al/`` - contains two files
     - ``POSCAR`` - the regular VASP POSSCAR file
     - ``SETTINGS.yaml`` - the setting file for quasiharmonic phonon calculation
- - ``Al_Fm-3m_225PBE/`` - contains all calculated thermodynamic properties
-    after post-processing the data stored in the MongoDB database for a finished
-    DFT calculations
-
-    - ``Yphon/`` - all data input/output for Yphon, e.x., hessian matrix (superfij.out), calculated phonon dos
-    - ``figures/`` - plots in png format for most of the thermodynamic properities
-    - ``readme`` - extensive summary of the calculated results in json format
-    - ``fvib_ele`` - tablated data containing the calculated thermodynamic properties
-    - ``fvib_eij`` - tablated data containing the calculated thermal expansion coefficient tensor
-    - ``record.json`` - SGTE fitting record for heat capacity, Gibbs energy, enthalpy, and entropy at given temperature range
-
- - ``ExptData.json`` - contains some experimental thermodynamic data for
-    a collection of materials to verify the DFTTK calculations.
 
 The following gives the steps to run the ``Al`` example
 
 .. code-block:: bash
 
-  dfttk run -wf robust -f POSCAR.Al -l -m 1
+  cd Al
+  dfttk run -wf robust -f POSCAR -l -m 1
 
 This will submit the batch DFT job to the system. One can check the progress
 of the DFT calculations by ``lpad get_wflows``. Only when all the values for
@@ -56,11 +44,14 @@ can go to next step by run
 
 .. code-block:: bash
 
+  cd dfttk_example #go back the dfttk example folder
   dfttk thfind -get -plot DFTTK -expt ExptData.json
-  #note that the key ``0c1887fa-0cb4-4ce2-9559-7f7909ffa11a`` is obtained from the file ``input/METADATAS.yaml`` automatically produced by the VASP calculation step.
 
-The above will produce more thatn 20 figures stored in the folder “Al_Fm-3m_225PBE/figures/” and they
-can be viewed t by clicking them in Windows/IOS or using the linux command ``display`` to show the figure.
+The file ``ExptData.json`` under the dfttk_example folder contains some
+experimental thermodynamic data for a collection of materials to verify the
+DFTTK calculations. The above will produce more thatn 20 figures stored in the
+folder ``Al_Fm-3m_225PBE/figures`` and they can be viewed t by clicking them
+in Windows/IOS or using the linux command ``display`` to show the figure.
 For example for linux
 
 .. code-block:: bash
@@ -74,6 +65,17 @@ For example for linux
     display Al_Fm-3m_225PBE/figures/Heat_capacities.png #to see the heat capaticity, and so on
 
 .. image:: _static/Al-Heat_capacities.png
+
+- ``Al_Fm-3m_225PBE/`` - contains all calculated thermodynamic properties
+   after post-processing the data stored in the MongoDB database for a finished
+   DFT calculations
+
+   - ``Yphon/`` - all data input/output for Yphon, e.x., hessian matrix (superfij.out), calculated phonon dos
+   - ``figures/`` - plots in png format for most of the thermodynamic properities
+   - ``readme`` - extensive summary of the calculated results in json format
+   - ``fvib_ele`` - tablated data containing the calculated thermodynamic properties
+   - ``fvib_eij`` - tablated data containing the calculated thermal expansion coefficient tensor
+   - ``record.json`` - SGTE fitting record for heat capacity, Gibbs energy, enthalpy, and entropy at given temperature range
 
 
 .. toctree::
