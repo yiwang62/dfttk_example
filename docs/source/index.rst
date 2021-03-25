@@ -20,7 +20,7 @@ To get the example, run
 
 .. code-block:: bash
 
-  git clone https://github.com/yiwang62/dfttk_example
+  git clone https://github.com/yiwang62/dfttk_example #if you have not download the example
   cd dfttk_example
 
 The example is designed to have the user to test the DFTTK package using Al.
