@@ -25,12 +25,14 @@ The three folders are
  - ``Al_Fm-3m_225PBE/`` - contains all calculated thermodynamic properties
     after post-processing the data stored in the MongoDB database for a finished
     DFT calculations
-    - dir ``Yphon/`` - all data input/output for Yphon, e.x., hessian matrix (superfij.out), calculated phonon dos
-    - dir ``figures/`` - plots in png format for most of the thermodynamic properities
-    - file ``readme`` - extensive summary of the calculated results in json format
-    - file ``fvib_ele`` - tablated data containing the calculated thermodynamic properties
-    - file ``fvib_eij`` - tablated data containing the calculated thermal expansion coefficient tensor
-    - file ``record.json`` - SGTE fitting record for heat capacity, Gibbs energy, enthalpy, and entropy at given temperature range
+
+    | dir ``Yphon/`` - all data input/output for Yphon, e.x., hessian matrix (superfij.out), calculated phonon dos
+    | dir ``figures/`` - plots in png format for most of the thermodynamic properities
+    | file ``readme`` - extensive summary of the calculated results in json format
+    | file ``fvib_ele`` - tablated data containing the calculated thermodynamic properties
+    | file ``fvib_eij`` - tablated data containing the calculated thermal expansion coefficient tensor
+    | file ``record.json`` - SGTE fitting record for heat capacity, Gibbs energy, enthalpy, and entropy at given temperature range
+
  - ``ExptData.json`` - contains some experimental thermodynamic data for
     a collection of materials to verify the DFTTK calculations.
 
