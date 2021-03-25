@@ -40,8 +40,7 @@ The following gives the steps to run the ``Al`` example
 
 .. code-block:: bash
 
- cd Al
- dfttk run -wf robust -f POSCAR.Al -l -m 1
+  dfttk run -wf robust -f POSCAR.Al -l -m 1
 
 This will submit the batch DFT job to the system. One can check the progress
 of the DFT calculations by ``lpad get_wflows``. Only when all the values for
@@ -50,8 +49,8 @@ can go to next step by run
 
 .. code-block:: bash
 
- dfttk thfind -get -plot DFTTK -expt ExptData.json
- #note that the key ``0c1887fa-0cb4-4ce2-9559-7f7909ffa11a`` is obtained from the file ``input/METADATAS.yaml`` automatically produced by the VASP calculation step.
+  dfttk thfind -get -plot DFTTK -expt ExptData.json
+  #note that the key ``0c1887fa-0cb4-4ce2-9559-7f7909ffa11a`` is obtained from the file ``input/METADATAS.yaml`` automatically produced by the VASP calculation step.
 
 The above will produce more thatn 20 figures stored in the folder “Al_Fm-3m_225PBE/figures/” and they
 can be viewed t by clicking them in Windows/IOS or using the linux command ``display`` to show the figure.
