@@ -61,20 +61,12 @@ For example for linux
     display Al_Fm-3m_225PBE/figures/LTC.png #to see the linear thermal expansion coefficient
 
 .. figure:: _static/Al-LTC.png
-      :width: 400px
-      :align: right
-      :height: 300px
-      :figclass: align-right
 
   .. code-block:: bash
 
     display Al_Fm-3m_225PBE/figures/Heat_capacities.png #to see the heat capaticity, and so on
 
 .. figure:: _static/Al-Heat_capacities.png
-      :width: 400px
-      :align: right
-      :height: 300px
-      :figclass: align-right
 
 
 .. toctree::
