@@ -27,7 +27,7 @@ Note for ACI/roar in Penn State, download the file `PBS_template_custom.txt <htt
 
 where
 
-    | vasp_psp is a place holding your vasp pseudopotentials    
+    | vasp_psp is a place holding your vasp pseudopotentials
     | yourcomputer is your computer name, such as aci-rour, cori-knl, cori-ksw, bridges2, stampede2
     | yourbactch can be pbs, slurm
     | PMG_MAPI_KEY can be obtained by: Go to the materials project website, https://materialsproject.org/, under the API section, you will easily find you API Keys number.
@@ -37,11 +37,11 @@ where
 Config MongoDB
 --------------
 
-DFTTK needs MongoDB to manage DFT calculations and outputs. The users of DFTTK can either buy the commercial MongoDB database service or set up their own MongoDB server. 
+DFTTK needs MongoDB to manage DFT calculations and outputs. The users of DFTTK can either buy the commercial MongoDB database service or set up their own MongoDB server.
 
 Ask the MongoDB system manager for two json files: one named ``db.json`` and another named ``my_launchpad.yaml`` and save them in a ``config`` folder wherever you choose.
 
-``db.json`` used by `FireWorks <https://materialsproject.github.io/fireworks/introduction.html>`_ through MongoDB to access the DFTTK output results, templated as follows. 
+``db.json`` used by `FireWorks <https://materialsproject.github.io/fireworks/introduction.html>`_ through MongoDB to access the DFTTK output results, templated as follows.
 
 .. _JSONLint: https://jsonlint.com
 
@@ -59,7 +59,7 @@ Ask the MongoDB system manager for two json files: one named ``db.json`` and ano
         "aliases": {}
     }
 
-``my_launchpad.yaml`` used by `FireWorks <https://materialsproject.github.io/fireworks/introduction.html>`_ through MongoDB for DFT job managements, templated as follows. 
+``my_launchpad.yaml`` used by `FireWorks <https://materialsproject.github.io/fireworks/introduction.html>`_ through MongoDB for DFT job managements, templated as follows.
 
 .. code-block:: YAML
 
@@ -92,7 +92,8 @@ Access MongoDB database from desktop
 YPHON
 -----
 
-To postprocess the finite properties, the Yphon package is required. Yphon can be installed by run
+For postprocessing the finite properties, the Yphon package is optional when phonopy
+failed. Yphon can be installed by run
 
 .. code-block:: bash
 
@@ -102,7 +103,7 @@ To postprocess the finite properties, the Yphon package is required. Yphon can b
 
 .. code-block:: bash
 
-    cd YphonPackage/YPHON/YPHON 
+    cd YphonPackage/YPHON/YPHON
     make
     #Note: If errors reported in the compiling stage, insert one line #define R_OK 1 after #include
 
@@ -118,8 +119,3 @@ For bsh user: the command search path should be changed by inserting the lines b
 
     PATH=.:~/YphonPackage/YPHON/YPHON:$BIN_PATH:$PATH
     export PATH
-
-
-
-
-
