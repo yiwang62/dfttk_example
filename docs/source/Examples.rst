@@ -5,7 +5,7 @@ The example is designed to have the user to test the DFTTK package using Al.
 The three folders are
 
  - ``Al/`` - contains two files
-    - ``POSCAR`` - the regular VASP POSSCAR file
+    - ``POSCAR`` - the regular VASP POSCAR file
     - ``SETTINGS.yaml`` - the setting file for quasiharmonic phonon calculation
  - ``Al_Fm-3m_225PBE/`` - contains all calculated thermodynamic properties
     after post-processing the data stored in the MongoDB database for a finished
