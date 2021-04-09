@@ -2,6 +2,10 @@ Installation
 ============
 
 It is recommended to install DFTTK under the `anaconda <https://docs.anaconda.com/anaconda/install/>`_ environment. Under the linux command prompt (or anaconda powershell prompt for Windows), one can create a preferred directory and then run
+#Note for Windows: 
+
+1.	Open your anaconda powershell prompt and run as administrator.
+2.	Go to the location where you want to install DFTTK. 
 
 - Release version
 
@@ -33,12 +37,19 @@ mkdir a folder named ``config`` whereever you want to followed by copy the file 
 
 where
 
-    | vasp_psp is a place holding your vasp pseudopotentials
+    | For the system other than aci, "-aci" should be replace by "-psp vasp_psp/" where vasp_psp is a place holding your vasp pseudopotentials
     | yourcomputer is your computer name, such as aci-vasp5, aci-vasp6, cori-knl, cori-ksw, bridges2, stampede2
     | yourbactch can be pbs, slurm
     | PMG_MAPI_KEY can be obtained by: Go to the materials project website, https://materialsproject.org/, under the API section, you will easily find you API Keys number.
     | finally, you need to change the account number and queue/partition number in the ``config/my_qadapter.yaml`` file
 
+- Additional steps for installation in Windows
+
+One need to add two environmental variables by right click Windows symbol located in the lower
+left corner -> system -> (scrolling down to) Advanced system settings -> Environmental variales -> "New.." button
+
+    | HOME - create a Windows environmental variale named 'HOME', something similiar to "C:\Users\xxxxx" where xxxxx is your login in user name
+    | FW_CONFIG_FILE - create a Windows environmental variale named 'FW_CONFIG_FILE' pointed to the 'config' folder
 
 Config MongoDB
 --------------
@@ -94,34 +105,19 @@ Access MongoDB database from desktop
   3. One needs to replace ``userid`` with the one (i.e. the value field of ``admin_user``) from the ``db.json`` file together with the the value field of ``admin_password``
 
 
+Job submission/run
+------------------
 
-YPHON
------
-
-For postprocessing the finite properties, the Yphon package is optional when phonopy
-failed. Yphon can be installed by run
+Pymatgen task to MongoDB from Windows, MacOS, or Linux
 
 .. code-block:: bash
 
-    cd ~
-    git clone https://github.com/yiwang62/YphonPackage
-    #Note: Usually the precompiled binaries should be executable in the common Linux/Unix environment. If not, do the following:
+    dfttk run –wf robust –f POSCAR –l
+
+Submit DFT job only in Linux
 
 .. code-block:: bash
 
-    cd YphonPackage/YPHON/YPHON
-    make
-    #Note: If errors reported in the compiling stage, insert one line #define R_OK 1 after #include
+    qlaunch singleshot; or
+    qlaunch rapidfire
 
-For csh user: the command search path should be changed by inserting line below into the .cshrc  (.tcshrc) file
-
-.. code-block:: bash
-
-    set path = (. ~/YphonPackage/YPHON/YPHON $BIN_PATH $path)
-
-For bsh user: the command search path should be changed by inserting the lines below into the .bash_profile (.bashrc) file
-
-.. code-block:: bash
-
-    PATH=.:~/YphonPackage/YPHON/YPHON:$BIN_PATH:$PATH
-    export PATH
