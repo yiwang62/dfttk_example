@@ -70,7 +70,6 @@ The ``Al_Fm-3m_225PBE/`` folder contains all calculated thermodynamic properties
 after post-processing the data stored in the MongoDB database for a finished
 DFT calculations, in particular
 
-   - ``Yphon/`` - all data input/output for Yphon, e.x., hessian matrix (superfij.out), calculated phonon dos
    - ``figures/`` - plots in png format for most of the thermodynamic properities
    - ``readme`` - extensive summary of the calculated results in json format
    - ``fvib_ele`` - tablated data containing the calculated thermodynamic properties
